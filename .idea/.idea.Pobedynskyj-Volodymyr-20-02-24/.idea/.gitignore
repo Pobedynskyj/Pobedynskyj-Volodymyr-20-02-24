@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/contentModel.xml
+/.idea.Pobedynskyj-Volodymyr-20-02-24.iml
+/projectSettingsUpdater.xml
+# Datasource local storage ignored files
+/../../../../../:\Pobedynskyj-Volodymyr-20-02-24\.idea\.idea.Pobedynskyj-Volodymyr-20-02-24\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
