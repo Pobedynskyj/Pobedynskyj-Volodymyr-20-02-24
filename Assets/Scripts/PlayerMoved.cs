@@ -4,29 +4,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-    
-
-
 public class PlayerMoved : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    private Vector2 moveDirection = Vector2.zero;
+    
     void Update()
     {
     #if UNITY_ANDROID
         if (Input.touchCount > 0)
         {
             Touch myTouch = Input.GetTouch(0);
-            Vector2 positionOnScreen = myTouch.position;
-            Debug.Log(positionOnScreen);
-            
+            if(myTouch.phase == TouchPhase.Moved)
+            {
+                Vector2 positionChange = myTouch.deltaPosition;
+                positionChange.x = -positionChange.x;
+                moveDirection = positionChange.normalized;
+            }
         }
     #endif
+        transform.position += (Vector3)moveDirection * -1f * Time.deltaTime;
     }
 }
