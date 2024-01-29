@@ -28,10 +28,6 @@ public class Road : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else
-        {
-            return;
-        }
     }
     
 }
