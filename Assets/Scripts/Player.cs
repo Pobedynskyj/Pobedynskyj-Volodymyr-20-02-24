@@ -6,24 +6,18 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Transform playerTransform;
-    
     [SerializeField] private RoadSpawner roadSpawner;
+    [SerializeField] private Joystick _joystick;
 
 
     private void FixedUpdate()
     {
-        /*if(Input.GetMouseButton(0))
-        {
-            PlayerMove();
-        }*/
+        PlayerMove(_joystick.Direction.x);
     }
 
-    private void PlayerMove()
+    private void PlayerMove(float posX)
     {
-        /*float halfScreen = Screen.width / 2;
-        float xPos = (Input.mousePosition.x - halfScreen) / halfScreen;
-
-        playerTransform.localPosition = new Vector3(xPos, 1, 0);*/
+        playerTransform.localPosition = new Vector3(posX * 2, playerTransform.localPosition.y, playerTransform.localPosition.z);
     }
     
     
